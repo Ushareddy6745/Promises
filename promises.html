@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //1.
+
+    let promise=new Promise((resolve,reject)=>{
+        let age=+prompt("Enter your age: ")
+        if(age>=18){
+            resolve("Your are eligible for voting")
+        }
+        else if(age=18){
+            resolve("First time voter")
+        }
+        else{
+            reject("You are not eligible for voting")
+        }
+    })
+
+
+    promise.then((vote)=>{
+        console.log(vote)
+    }).catch((vote)=>{
+        console.log(vote)
+    })
+
+
+
+    //2.
+
+    let promise2=new Promise((resolve,reject)=>{
+        let remainder=true
+        setTimeout(()=>{
+          if(remainder==true){
+            resolve("its time to eat")
+          }else{
+            reject("You have time to eat")
+          }
+        },1000)
+    })
+
+    promise2.then((msg)=>{
+        console.log(msg)
+    }).catch((msg)=>{
+        console.log(msg)
+    })
+
+
+
+    //3.
+    let Rank=new Promise(function(res,reg){
+        let score=+prompt("Enter your Score: ")
+
+        if(score>=50){
+            res("You are Passed")
+        }
+        else if(score=50){
+            res("AVG")
+        }
+        else{
+            reg("You are Failed")
+        }
+    })
+
+    Rank.then((Passed)=>{
+        console.log(Passed)
+    })
+    .catch((failed)=>{
+        console.log(failed)
+    })
+
+
+   
+        
+    </script>
+</body>
+</html>
